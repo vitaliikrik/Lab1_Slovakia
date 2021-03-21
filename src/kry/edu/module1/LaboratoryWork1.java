@@ -53,6 +53,7 @@ public class LaboratoryWork1 {
             for (String temporaryWord : temporaryWords) {
                 if (temporaryWord.equals("Harry")) {
                     countWithHarry++;
+                    break;
                 }
             }
         }
