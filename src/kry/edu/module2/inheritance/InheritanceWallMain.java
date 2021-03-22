@@ -15,7 +15,7 @@ public class InheritanceWallMain {
         System.out.println(wall2 + " has price " + wall2.getPrice());
     }
     /*
-        Wall{Rectangle{length = 10.0, width = 10.0}, color='white', isInner=false, isWarmed=true} has price 600.0
-        Wall{Rectangle{length = 20.0, width = 20.0}, color='white', isInner=false, isWarmed=true} has price 2400.0
+        Wall{Rectangle{length = 10.0, width = 10.0}, color='white', isInner=false, isWarmed=true} has price 1202.0
+        Wall{Rectangle{length = 20.0, width = 20.0}, color='white', isInner=false, isWarmed=true} has price 3308.0
      */
 }

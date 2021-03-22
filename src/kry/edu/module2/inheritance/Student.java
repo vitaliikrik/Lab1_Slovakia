@@ -43,14 +43,14 @@ public class Student extends Person {
     public Student(String firstName, String lastName, String patronymicName,
                    String registrationAddress, LocalDate dateOfBirth, int bloodGroup,
                    boolean isPositiveRhesusFactor, String nationality,
-                   String citizenship, boolean isMarried, String identificationNumber,
+                   String citizenship, String maritalStatus, String identificationNumber,
                    double height, double weight, char gender, String hairColor,
                    String university, String department, String chair, String group,
                    String specialty, String currentEducationDegree, int yearOfStudy,
                    double averageGrade, String studentCardNumber, boolean isGranted) {
         super(firstName, lastName, patronymicName, registrationAddress, dateOfBirth,
                 bloodGroup, isPositiveRhesusFactor, nationality, citizenship,
-                isMarried, identificationNumber, height, weight, gender, hairColor);
+                maritalStatus, identificationNumber, height, weight, gender, hairColor);
         this.university = university;
         this.department = department;
         this.chair = chair;

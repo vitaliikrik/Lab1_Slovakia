@@ -1,6 +1,7 @@
 package kry.edu.module2.inheritance;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 /*
@@ -11,6 +12,8 @@ import java.util.Objects;
   @since 3/19/2021 - 18.34
 */
 public class Person {
+    private static final int ADULT_AGE = 18;
+
     private String firstName;
     private String lastName;
     private String patronymicName;
@@ -20,7 +23,7 @@ public class Person {
     private boolean isPositiveRhesusFactor;
     private String nationality;
     private String citizenship;
-    private boolean isMarried;
+    private String maritalStatus;
     private String identificationNumber;
     private double height;
     private double weight;
@@ -33,7 +36,7 @@ public class Person {
     public Person(String firstName, String lastName, String patronymicName,
                   String registrationAddress, LocalDate dateOfBirth, int bloodGroup,
                   boolean isPositiveRhesusFactor, String nationality,
-                  String citizenship, boolean isMarried, String identificationNumber,
+                  String citizenship, String maritalStatus, String identificationNumber,
                   double height, double weight, char gender, String hairColor) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,12 +47,20 @@ public class Person {
         this.isPositiveRhesusFactor = isPositiveRhesusFactor;
         this.nationality = nationality;
         this.citizenship = citizenship;
-        this.isMarried = isMarried;
+        this.maritalStatus = maritalStatus;
         this.height = height;
         this.weight = weight;
         this.gender = gender;
         this.hairColor = hairColor;
         setIdentificationNumber(identificationNumber);
+    }
+
+    public int getAge() {
+        return (int) ChronoUnit.YEARS.between(this.getDateOfBirth(), LocalDate.now());
+    }
+
+    public boolean isAdult() {
+        return getAge() >= ADULT_AGE;
     }
 
     public String getFirstName() {
@@ -124,12 +135,12 @@ public class Person {
         this.citizenship = citizenship;
     }
 
-    public boolean isMarried() {
-        return isMarried;
+    public String getMaritalStatus() {
+        return maritalStatus;
     }
 
-    public void setMarried(boolean married) {
-        isMarried = married;
+    public void setMaritalStatus(String married) {
+        maritalStatus = married;
     }
 
     public String getIdentificationNumber() {
@@ -182,7 +193,7 @@ public class Person {
         Person person = (Person) o;
         return getBloodGroup() == person.getBloodGroup() &&
                 isPositiveRhesusFactor() == person.isPositiveRhesusFactor() &&
-                isMarried() == person.isMarried() &&
+                getMaritalStatus().equals(person.getMaritalStatus()) &&
                 Double.compare(person.getHeight(), getHeight()) == 0 &&
                 Double.compare(person.getWeight(), getWeight()) == 0 &&
                 getGender() == person.getGender() &&
@@ -202,7 +213,7 @@ public class Person {
         return Objects.hash(getFirstName(), getLastName(), getPatronymicName(),
                 getRegistrationAddress(), getDateOfBirth(), getBloodGroup(),
                 isPositiveRhesusFactor(), getNationality(), getCitizenship(),
-                isMarried(), getIdentificationNumber(), getHeight(), getWeight(),
+                getMaritalStatus(), getIdentificationNumber(), getHeight(), getWeight(),
                 getGender(), getHairColor());
     }
 
@@ -218,7 +229,7 @@ public class Person {
                 ", isPositiveRhesusFactor=" + isPositiveRhesusFactor +
                 ", nationality='" + nationality + '\'' +
                 ", citizenship='" + citizenship + '\'' +
-                ", isMarried=" + isMarried +
+                ", maritalStatus=" + maritalStatus +
                 ", identificationNumber='" + identificationNumber + '\'' +
                 ", height=" + height +
                 ", weight=" + weight +

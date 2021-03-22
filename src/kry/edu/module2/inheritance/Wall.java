@@ -10,6 +10,13 @@ import kry.edu.module2.classdesign.Rectangle;
   @since 3/19/2021 - 18.13
 */
 public class Wall extends Rectangle {
+
+    private static final double PRICE_FOR_ONE_SQUARED_METER = 4.5;
+    private static final double WHITE_WALL_PRICE = 500;
+    private static final double DEFAULT_COLORED_WALL_PRICE = 1000;
+    private static final double DEFAULT_INNER_COEFFICIENT = 1.2;
+    private static final double DEFAULT_WARMED_COEFFICIENT = 1.3;
+
     private String color;
     private boolean isInner;
     private boolean isWarmed;
@@ -56,10 +63,11 @@ public class Wall extends Rectangle {
     }
 
     public double getPrice() {
-        return super.getArea()
-                * (!getColor().equalsIgnoreCase("white") ? 2 : 1)
-                * (!isInner ? 2 : 1)
-                * (isWarmed ? 3 : 1);
+        return super.getArea() * PRICE_FOR_ONE_SQUARED_METER
+                * (!isInner ? DEFAULT_INNER_COEFFICIENT : 1)
+                * (isWarmed ? DEFAULT_WARMED_COEFFICIENT : 1)
+                + ((getColor().equalsIgnoreCase("white") ? WHITE_WALL_PRICE
+                : DEFAULT_COLORED_WALL_PRICE));
     }
 
     @Override
