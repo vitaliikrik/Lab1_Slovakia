@@ -150,6 +150,7 @@ public class Student extends Person {
         if (!super.equals(o)) return false;
         Student student = (Student) o;
         return getYearOfStudy() == student.getYearOfStudy() &&
+                Double.compare(student.getAverageGrade(), getAverageGrade()) == 0 &&
                 isGranted() == student.isGranted() &&
                 getUniversity().equals(student.getUniversity()) &&
                 getDepartment().equals(student.getDepartment()) &&

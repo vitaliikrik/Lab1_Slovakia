@@ -45,11 +45,11 @@ public class Person {
         this.nationality = nationality;
         this.citizenship = citizenship;
         this.isMarried = isMarried;
-        this.identificationNumber = identificationNumber;
         this.height = height;
         this.weight = weight;
         this.gender = gender;
         this.hairColor = hairColor;
+        setIdentificationNumber(identificationNumber);
     }
 
     public String getFirstName() {
@@ -192,7 +192,9 @@ public class Person {
                 getRegistrationAddress().equals(person.getRegistrationAddress()) &&
                 getDateOfBirth().equals(person.getDateOfBirth()) &&
                 getNationality().equals(person.getNationality()) &&
-                getCitizenship().equals(person.getCitizenship());
+                getCitizenship().equals(person.getCitizenship()) &&
+                Objects.equals(getIdentificationNumber(), person.getIdentificationNumber()) &&
+                getHairColor().equals(person.getHairColor());
     }
 
     @Override
