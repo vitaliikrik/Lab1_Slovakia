@@ -184,4 +184,171 @@ public class Student extends Person {
                 ", isGranted=" + isGranted +
                 '}';
     }
+
+    public static class Builder {
+        private Student student;
+
+        public Builder() {
+            this.student = new Student();
+        }
+
+        public Builder setSimilarTo(Student student) {
+            this.student.setFirstName(student.getFirstName());
+            this.student.setLastName(student.getLastName());
+            this.student.setPatronymicName(student.getPatronymicName());
+            this.student.setRegistrationAddress(student.getRegistrationAddress());
+            this.student.setDateOfBirth(student.getDateOfBirth());
+            this.student.setBloodGroup(student.getBloodGroup());
+            this.student.setPositiveRhesusFactor(student.isPositiveRhesusFactor());
+            this.student.setNationality(student.getNationality());
+            this.student.setCitizenship(student.getCitizenship());
+            this.student.setMaritalStatus(student.getMaritalStatus());
+            this.student.setIdentificationNumber(student.getIdentificationNumber());
+            this.student.setHeight(student.getHeight());
+            this.student.setWeight(student.getWeight());
+            this.student.setGender(student.getGender());
+            this.student.setHairColor(student.getHairColor());
+            this.student.setPatronymicName(student.getPatronymicName());
+            this.student.setUniversity(student.getUniversity());
+            this.student.setDepartment(student.getDepartment());
+            this.student.setChair(student.getChair());
+            this.student.setGroup(student.getGroup());
+            this.student.setSpecialty(student.getSpecialty());
+            this.student.setCurrentEducationDegree(student.getCurrentEducationDegree());
+            this.student.setYearOfStudy(student.getYearOfStudy());
+            this.student.setAverageGrade(student.getAverageGrade());
+            this.student.setStudentCardNumber(student.getStudentCardNumber());
+            this.student.setGranted(student.isGranted());
+            return this;
+        }
+
+        public Builder setFirstName(String firstName) {
+            student.setFirstName(firstName);
+            return this;
+        }
+
+        public Builder setLastName(String lastName) {
+            student.setLastName(lastName);
+            return this;
+        }
+
+        public Builder setPatronymicName(String patronymicName) {
+            student.setPatronymicName(patronymicName);
+            return this;
+        }
+
+        public Builder setRegistrationAddress(String registrationAddress) {
+            student.setRegistrationAddress(registrationAddress);
+            return this;
+        }
+
+        public Builder setDateOfBirth(LocalDate dateOfBirth) {
+            student.setDateOfBirth(dateOfBirth);
+            return this;
+        }
+
+        public Builder setBloodGroup(int bloodGroup) {
+            student.setBloodGroup(bloodGroup);
+            return this;
+        }
+
+        public Builder setPositiveRhesusFactor(boolean positiveRhesusFactor) {
+            student.setPositiveRhesusFactor(positiveRhesusFactor);
+            return this;
+        }
+
+        public Builder setNationality(String nationality) {
+            student.setNationality(nationality);
+            return this;
+        }
+
+        public Builder setCitizenship(String citizenship) {
+            student.setCitizenship(citizenship);
+            return this;
+        }
+
+        public Builder setMaritalStatus(String maritalStatus) {
+            student.setMaritalStatus(maritalStatus);
+            return this;
+        }
+
+        public Builder setIdentificationNumber(String identificationNumber) {
+            student.setIdentificationNumber(identificationNumber);
+            return this;
+        }
+
+        public Builder setHeight(int height) {
+            student.setHeight(height);
+            return this;
+        }
+
+        public Builder setWeight(int weight) {
+            student.setWeight(weight);
+            return this;
+        }
+
+        public Builder setGender(char gender) {
+            student.setGender(gender);
+            return this;
+        }
+
+        public Builder setHairColor(String hairColor) {
+            student.setHairColor(hairColor);
+            return this;
+        }
+
+        public Builder setUniversity(String university) {
+            student.setUniversity(university);
+            return this;
+        }
+
+        public Builder setDepartment(String department) {
+            student.setDepartment(department);
+            return this;
+        }
+
+        public Builder setChair(String chair) {
+            student.setChair(chair);
+            return this;
+        }
+
+        public Builder setGroup(String group) {
+            student.setGroup(group);
+            return this;
+        }
+
+        public Builder setSpecialty(String specialty) {
+            student.setSpecialty(specialty);
+            return this;
+        }
+
+        public Builder setCurrentEducationDegree(String currentEducationDegree) {
+            student.setCurrentEducationDegree(currentEducationDegree);
+            return this;
+        }
+
+        public Builder setYearOfStudy(int yearOfStudy) {
+            student.setYearOfStudy(yearOfStudy);
+            return this;
+        }
+
+        public Builder setAverageGrade(double averageGrade) {
+            student.setAverageGrade(averageGrade);
+            return this;
+        }
+
+        public Builder setStudentCardNumber(String studentCardNumber) {
+            student.setStudentCardNumber(studentCardNumber);
+            return this;
+        }
+
+        public Builder setGranted(boolean granted) {
+            student.setGranted(granted);
+            return this;
+        }
+
+        public Student build() {
+            return student;
+        }
+    }
 }
