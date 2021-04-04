@@ -16,6 +16,7 @@ import java.util.Random;
 */
 public class ListsTask {
 
+    private static final ChronoUnit chronoUnit = ChronoUnit.NANOS;
     private static final int NUMBER_OF_ELEMENTS_TO_CREATE = 100000;
     private static final int NUMBER_OF_ELEMENTS_TO_WORK_WITH = 1000;
     private static final Random random = new Random();
@@ -26,7 +27,7 @@ public class ListsTask {
             list.add(random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         if (typeToPrint != null) {
             System.out.println("Duration of " + typeToPrint + " is " + duration);
         }
@@ -40,7 +41,7 @@ public class ListsTask {
             list.add(0, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -52,7 +53,7 @@ public class ListsTask {
             list.add(list.size() / 2, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -64,7 +65,7 @@ public class ListsTask {
             list.add(list.size() - 5, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -76,7 +77,7 @@ public class ListsTask {
             list.set(i, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -89,7 +90,7 @@ public class ListsTask {
             list.set(i, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -101,7 +102,7 @@ public class ListsTask {
             list.set(list.size() - 5, random.nextInt(1000));
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -113,7 +114,7 @@ public class ListsTask {
             list.remove(0);
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -125,7 +126,7 @@ public class ListsTask {
             list.remove(list.size() / 2);
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -137,7 +138,7 @@ public class ListsTask {
             list.remove(list.size() - 5);
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
@@ -150,13 +151,16 @@ public class ListsTask {
             list.get(i);
         }
         LocalDateTime finish = LocalDateTime.now();
-        long duration = ChronoUnit.NANOS.between(start, finish);
+        long duration = chronoUnit.between(start, finish);
         System.out.println("Duration of " + typeToPrint + " is " + duration);
     }
 
     public static void main(String[] args) {
         List<Integer> arrayList = new ArrayList<>();
         List<Integer> linkedList = new LinkedList<>();
+
+        System.out.println("All the values are in " + chronoUnit);
+        System.out.println();
 
         System.out.println("|Lists creation|");
         createOperation(arrayList, "ArrayList ");
@@ -228,6 +232,8 @@ public class ListsTask {
     }
 
     /*
+        All the values are in Nanos
+
         |Lists creation|
         Duration of ArrayList  is 128000000
         Duration of LinkedList is 6000000
