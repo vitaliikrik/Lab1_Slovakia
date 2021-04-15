@@ -47,4 +47,28 @@ public class MultithreadingTaskMain {
         System.out.println("It took " + ChronoUnit.MILLIS.between(start, finish)
                 + " ms");
     }
+    /*
+         ---------------------Consistent-----------------
+        Running has started on 2021-04-15T10:31:51.854
+        Running has finished on 2021-04-15T10:31:56.918
+        It took 5064 ms
+         ---------------------Parallel-------------------
+        Running has started on 2021-04-15T10:31:56.919
+        Thread-0 has started on 2021-04-15T10:31:56.919
+        Thread-1 has started on 2021-04-15T10:31:56.919
+        Thread-3 has started on 2021-04-15T10:31:56.919
+        Thread-2 has started on 2021-04-15T10:31:56.919
+        Thread-4 has started on 2021-04-15T10:31:56.919
+        Thread-3 has finished on 2021-04-15T10:31:58.684
+        Thread-2 has finished on 2021-04-15T10:31:58.710
+        Thread-1 has finished on 2021-04-15T10:31:58.733
+        Thread-0 has finished on 2021-04-15T10:31:58.806
+        Thread-4 has finished on 2021-04-15T10:31:58.824
+        Running has finished on 2021-04-15T10:31:58.824
+        It took 1905 ms
+     */
+    /*
+        Parallel execution took 1905 ms, consistent execution took 5064 ms.
+        That means that parallel execution is faster than consistent one.
+     */
 }
