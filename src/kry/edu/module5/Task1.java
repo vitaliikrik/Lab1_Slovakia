@@ -56,8 +56,11 @@ public class Task1 {
         }
         array = text.split(" +");
         list = Arrays.stream(array).collect(Collectors.toList());
+        map = getMap(list);
+        Map<String, Integer> finalMap = map;
         List<String> properNamesList = list.stream()
                 .distinct()
+                .filter(entry -> !finalMap.containsKey(entry.toLowerCase()))
                 .filter(entry -> Character.isUpperCase(entry.charAt(0)))
                 .sorted()
                 .collect(Collectors.toList());
@@ -96,26 +99,25 @@ public class Task1 {
         they=597
         as=526
         -----------SORTED NAMES-----------
-        A
         AAAAAAAAAARGH
         AAAARGH
         ALBUS
-        ALL
         ALLEY
-        ALLOWED
-        AM
-        AND
-        ANYTHING
-        ARE
-        AT
         Aaah
         Aargh
         Abbott
-        Abou
-        About
         Absolutely
         According
         Adalbert
-
+        Adrian
+        Africa
+        African
+        Agrippa
+        Ah
+        Aha
+        Ahem
+        Ahern
+        Alas
+        Alberic
      */
 }
